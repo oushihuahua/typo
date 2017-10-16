@@ -16,6 +16,14 @@ describe Admin::CategoriesController do
     assert_response :redirect, :action => 'index'
   end
 
+  describe "test_new" do
+    it 'should response success' do
+      get :new
+      response.should be_success
+    end
+  end
+
+
   describe "test_edit" do
     before(:each) do
       get :edit, :id => Factory(:category).id
